@@ -7,7 +7,14 @@
  */
 
 import React, {useState} from 'react';
-import {Text, View, StyleSheet, TextInput, Button} from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  TextInput,
+  Button,
+  ScrollView,
+} from 'react-native';
 
 const App = () => {
   const [goal, setGoal] = useState('');
@@ -30,13 +37,15 @@ const App = () => {
         <Button title="Add Goal" onPress={addGoalHandler} />
       </View>
       <View style={styles.goalsContainer}>
-        {courseGoals.map((item, index) => {
-          return (
-            <View style={styles.goalItem} key={index}>
-              <Text style={styles.goalText}>{item}</Text>
-            </View>
-          );
-        })}
+        <ScrollView alwaysBounceVertical>
+          {courseGoals.map((item, index) => {
+            return (
+              <View style={styles.goalItem} key={index}>
+                <Text style={styles.goalText}>{item}</Text>
+              </View>
+            );
+          })}
+        </ScrollView>
       </View>
     </View>
   );
