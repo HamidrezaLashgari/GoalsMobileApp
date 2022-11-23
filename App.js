@@ -44,7 +44,7 @@ const App = () => {
     <View style={styles.appContainer}>
       <Button
         title="Add New Goal"
-        color="#5e0acc"
+        color="#407dff"
         onPress={startAddGoalHandler}
       />
       <GoalInput
